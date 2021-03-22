@@ -77,14 +77,14 @@ function vigenerChiperInit() {
 		});
 		await table.append(trPlain);
 
-		let trPlainIndex = $("<tr><td>Plain Char</td></tr>");
+		let trPlainIndex = $("<tr><td>Plain Index</td></tr>");
 		result.chiperChars.plainNum.forEach( async(o) => {
 			await trPlainIndex.append($(`<td>${o?.num}</td>`));
 		});
 		await table.append(trPlainIndex);
 
 
-		let trKeyIndex = $("<tr><td>Chiper Index</td></tr>");
+		let trKeyIndex = $("<tr><td>Key Index</td></tr>");
 		result.chiperChars.plainNum.forEach( async(o) => {
 			await trKeyIndex.append($(`<td>${o?.keyNum}</td>`));
 		});
@@ -102,6 +102,12 @@ function vigenerChiperInit() {
 			await trChiperChar.append($(`<td>${o}</td>`));
 		});
 		await table.append(trChiperChar);
+
+		trPlainIndex = $("<tr><td>Decrypt</td></tr>");
+		result.chiperChars.plainNum.forEach( async(o) => {
+			await trPlainIndex.append($(`<td>${o?.num}</td>`));
+		});
+		await table.append(trPlainIndex);
 
 		$(e.target).find(".result-box").empty();
 		$(e.target).find(".result-box").append(table);
@@ -168,6 +174,13 @@ function vernamChiperInit() {
 			await trChiperBinary.append($(`<td>${o}</td>`));
 		});
 		await table.append(trChiperBinary);
+
+
+		trBinerKey = $("<tr><td>Decrypt</td></tr>");
+		result.plainArr.forEach( async(o) => {
+			await trBinerKey.append($(`<td>${o?.keyObj?.binary}</td>`));
+		});
+		await table.append(trBinerKey);
 
 		$(e.target).find(".result-box").empty();
 		$(e.target).find(".result-box").append(table);
