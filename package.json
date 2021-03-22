@@ -2,7 +2,7 @@
   "name": "ecrypt-decrypt",
   "version": "1.0.0",
   "description": "",
-  "main": "cesar-chiper.js",
+  "main": "index.html",
   "directories": {
     "test": "tests"
   },
@@ -17,7 +17,7 @@
     "bootstrap": "^4.6.0"
   },
   "scripts": {
-    "build":"npx parcel build src/index.html -d dist"
+    "build":"npx parcel build src/index.html"
   },
   "author": "",
   "license": "ISC"
